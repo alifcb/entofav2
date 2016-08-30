@@ -47,7 +47,7 @@ scotchApp.controller('help1',  function ($scope,todoService, $location,$route,$r
 	$scope.ones=true;
 	$scope.twos=false;
 	$scope.threes=false;
-	$scope.next = function ( oner ) {
+$scope.next = function ( oner ) {
 if(oner=='one'){
 	$scope.ones=false;
 	$scope.twos=true;
@@ -57,16 +57,26 @@ if(oner=='one'){
 	$scope.twos=false;
 	$scope.threes=true;
 }
-
-	}
+}
 todoService.idphone().then(function(items)
 {
 	alert(items);
 	$scope.todos = items;
 	$scope.listid = 'list/'+items;
 });
-$scope.go = function (path) {alert(path);
-	$location.path( path );};
+$scope.go = function (path) {
+if(path==undefined){
+
+	todoService.idphone().then(function(items)
+{
+	alert(items);
+	$scope.todos = items;
+	$scope.listid = 'list/'+items;
+});
+	
+}
+	alert(path);
+	$location.path(path);};
 
 document.addEventListener("backbutton", function(e){
 	if($location.path()=='/' ){
