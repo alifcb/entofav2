@@ -4015,7 +4015,9 @@ db.transaction(function(tx)
 { tx.executeSql("SELECT * FROM setting where title='id_phone'", [], function(tx, res) 
 { 
 result=res.rows.item(0).value;
-if(result){}else {result=id_phone.id;}
+alert(result);
+alert(id_phone.id);
+if(result){}else {result=id_phone.id}
 deferred.resolve(result);
 });
 });
