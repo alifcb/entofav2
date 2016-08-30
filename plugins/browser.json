@@ -8,10 +8,10 @@
     },
     "installed_plugins": {
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.namiaweb.farsi"
+            "PACKAGE_NAME": "com.namiaweb.entofa"
         },
         "cordova-plugin-x-socialsharing": {
-            "PACKAGE_NAME": "com.namiaweb.farsi"
+            "PACKAGE_NAME": "com.namiaweb.entofa"
         }
     },
     "dependent_plugins": {}

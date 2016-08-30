@@ -61,10 +61,12 @@ if(oner=='one'){
 	}
 todoService.idphone().then(function(items)
 {
+	alert(items);
 	$scope.todos = items;
 	$scope.listid = 'list/'+items;
 });
-$scope.go = function ( path ) {$location.path( path );};
+$scope.go = function (path) {alert(path);
+	$location.path( path );};
 
 document.addEventListener("backbutton", function(e){
 	if($location.path()=='/' ){
