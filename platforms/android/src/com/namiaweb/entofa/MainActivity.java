@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.namiaweb.farsi;
+package com.namiaweb.entofa;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
