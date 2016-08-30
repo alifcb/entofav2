@@ -60,7 +60,7 @@ function successCB() {
 
 }
 function errorCB(err) {
-    alert("Error processing SQL: "+err.message);
+    alert("Error processing SQL0: "+err.message);
 }
 
 //////////////////////////////////// مرحله سنجش فلگ بار اول

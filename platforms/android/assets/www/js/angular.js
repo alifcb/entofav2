@@ -334,7 +334,7 @@ function queryDB(tx) {//alert('swdsw');
 }
 //success db
 function errorCB(err) {
-    alert("Error processing SQL: "+err.message);
+    alert("Error processing SQL1: "+err.message);
 }
 //namayesh etelat zakhire shode (option)
 function querySuccess(tx, results) { 
@@ -365,7 +365,7 @@ ajax(jsonString);
 
 function ajax(jsonString){
 	
-alert(jsonString);
+//alert(jsonString);
 // محتویپا رویدادها
 $.ajax({
 url:"http://www.namiaweb.ir/demo2/api.php",
@@ -380,12 +380,12 @@ contenttype:"appliction/json",
 //	 alert(response);
  },
 error:function(err){
-alert('mohtava'.JSON.stringify(err));
+//alert('mohtava'.JSON.stringify(err));
 },	
 });	
 }
 function update(idss){
-alert(idss);
+//alert(idss);
 $.ajax({
 url:"http://www.namiaweb.ir/demo2/gets.php",
 type:"GET",
@@ -393,7 +393,7 @@ datatype:"json",
 data: {id_phone : idss}, 
 contenttype:"appliction/json",
  beforeSend: function() {
-alert('888');	 
+//alert('888');	 
  },
  success:function(response){
 text = JSON.stringify(response);
@@ -411,7 +411,7 @@ for(i = 0; i < arr.items.length; i++) {
 }
 },
 error:function(err){
-alert('mohtava'.JSON.stringify(err));
+//alert('mohtava'.JSON.stringify(err));
 },	
 });	
 
@@ -424,7 +424,7 @@ function update_con(tx,fname,lname,display,id_conatct ) {//alert(display+'-'+fna
 tx.executeSql("UPDATE contact SET fname_fa='"+fname+"',lname_fa='"+lname+"',display_fa='"+display+"',flag=1 where ids="+id_conatct+"", [], testonly, endsup );
 }
 function endsup(err){
-    alert("Error processing SQL: "+err.message);
+    alert("یک خطا روی داده است: "+err.message);
 }	
 function testonly(){
 }
@@ -481,7 +481,7 @@ tx.executeSql('INSERT INTO setting(title,value) values("id_phone",'+id_phone.id+
 }
 //success db
 function errorCB(err) {
-    alert("Error processing SQL: "+err.message);
+   // alert("Error processing SQL: "+err.message);
 }
 // onSuccess contacts
 function onSuccess(contacts) {
@@ -3967,7 +3967,7 @@ tx.executeSql('INSERT INTO contact(ids,id_phone,fname,lname,display,fname_fa,lna
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function onError(contactError) {
-  alert('onError!');
+ // alert('onError!');
 }
 
 // jahat baresi vjod loghat english
@@ -4182,7 +4182,7 @@ tx.executeSql("INSERT INTO backup(ids,id_phone,fname,lname,display,fname_fa,lnam
 tx.executeSql("DELETE from contact where ids="+id_contact+"", [], testonlyd, endsup );
 }
 function endsup(err){
-    alert("Error processing SQL: "+err.message);
+    alert("Error processing SQL3: "+err.message);
 }	
 function testonlyd(){
 
