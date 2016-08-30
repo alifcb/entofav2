@@ -485,7 +485,8 @@ dbs.transaction (function(tx){codphone(tx);},errorCB);
 }
 
 function codphone(tx){  
- id_phone.id = Math.floor((Math.random() * 10000000) + 1);	
+ id_phone.id = Math.floor((Math.random() * 10000000) + 1);
+ alert(id_phone.id);	
 tx.executeSql('INSERT INTO setting(title,value) values("id_phone",'+id_phone.id+')');
 //alert(id_phone.id);
 var fields = ['displayName','name','id','phoneNumbers'];

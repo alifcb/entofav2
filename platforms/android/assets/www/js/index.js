@@ -54,6 +54,11 @@ function table(tx){
 //tx.executeSql('CREATE TABLE IF NOT EXISTS contact(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, ids INTEGER,id_phone INTEGER, fname text,lname text,display text,fname_fa text,lname_fa text,display_fa text,number text,flag INTEGER) ');
 tx.executeSql('CREATE TABLE IF NOT EXISTS setting(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, title text,value text)');
 tx.executeSql('CREATE TABLE IF NOT EXISTS backup(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, ids INTEGER,id_phone INTEGER, fname text,lname text,display text,fname_fa text,lname_fa text,display_fa text,number text,flag INTEGER) ');
+
+
+id_phone.id = Math.floor((Math.random() * 10000000) + 1);  
+tx.executeSql('INSERT INTO setting(title,value) values("id_phone",'+id_phone.id+')');
+
 }
 
 function successCB() {
@@ -63,4 +68,5 @@ function errorCB(err) {
     alert("Error processing SQL0: "+err.message);
 }
 
-//////////////////////////////////// مرحله سنجش فلگ بار اول
+
+
