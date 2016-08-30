@@ -177,7 +177,7 @@ $mdToast.show(
 
 $scope.go = function ( path ) {$location.path( path );};
 var param1 = $routeParams.param1;
-param1='all';
+//param1='all';
 todoService.start(param1);
 });
 
@@ -446,9 +446,10 @@ function testonly(){
 scotchApp.service('todoService', function($q) 
 {
 ///////////////////////////////////////////////////////////////////////////////////////////start
+var id_phone = {}; // Globally scoped object
 this.start = function(param)
 {  
-var id_phone = {}; // Globally scoped object
+
 id_phone.parid=param;
 var db = window.openDatabase("Database", "1.0", "Cordova Namia", 200000);
 db.transaction(tablel, errorCB, successCp);
@@ -478,12 +479,13 @@ navigator.contacts.find(fields, onSuccess, onError);
 
 function one_start(tx) { 
 //pyda kardan contacts ha 
-
+alert('showeee');
 var dbs = window.openDatabase("Database", "1.0", "Cordova Namia", 200000);
 dbs.transaction (function(tx){codphone(tx);},errorCB);
 }
 
 function codphone(tx){  
+	alert('twooo');
  id_phone.id = Math.floor((Math.random() * 10000000) + 1);	
 tx.executeSql('INSERT INTO setting(title,value) values("id_phone",'+id_phone.id+')');
 //alert(id_phone.id);
