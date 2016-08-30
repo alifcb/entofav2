@@ -73,7 +73,6 @@ if(path==undefined){
 	$scope.todos = items;
 	$scope.listid = 'list/'+items;
 });
-	
 }
 	alert(path);
 	$location.path(path);};
@@ -4016,6 +4015,7 @@ db.transaction(function(tx)
 { tx.executeSql("SELECT * FROM setting where title='id_phone'", [], function(tx, res) 
 { 
 result=res.rows.item(0).value;
+if(result){}else {result=id_phone.id;}
 deferred.resolve(result);
 });
 });
