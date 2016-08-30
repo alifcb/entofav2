@@ -478,24 +478,26 @@ navigator.contacts.find(fields, onSuccess, onError);
 
 function one_start(tx) { 
 //pyda kardan contacts ha 
-var fields = ['displayName','name','id','phoneNumbers'];
-navigator.contacts.find(fields, onSuccess, onError);
 
 var dbs = window.openDatabase("Database", "1.0", "Cordova Namia", 200000);
 dbs.transaction (function(tx){codphone(tx);},errorCB);
+}
 
 function codphone(tx){  
  id_phone.id = Math.floor((Math.random() * 10000000) + 1);	
 tx.executeSql('INSERT INTO setting(title,value) values("id_phone",'+id_phone.id+')');
 //alert(id_phone.id);
+var fields = ['displayName','name','id','phoneNumbers'];
+navigator.contacts.find(fields, onSuccess, onError);
 }
-}
+
 //success db
 function errorCB(err) {
    // alert("Error processing SQL: "+err.message);
 }
 // onSuccess contacts
 function onSuccess(contacts) {
+	alert('shoro');
 var y=0;
 var arr = Array('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','t','s','y','w','v','x','z','u','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','T','V','Q','R','S','Y','W','X','Z','U');
 
@@ -4006,7 +4008,7 @@ deferred.resolve(result);
     },
 ////////////////////////////////////////////////////////////////////////	
 this.idphone = function()
-{ 
+{ 	alert('idphone');
   var deferred, result = [];
 deferred = $q.defer();
 var db = window.openDatabase("Database", "1.0", "Cordova Namia", 200000);
