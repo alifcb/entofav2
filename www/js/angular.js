@@ -4022,7 +4022,7 @@ result=res.rows.item(0).value;
 alert(result);
 alert(id_phone.id);
 if(result){}else {result=id_phone.id}
-deferred.resolve(result);
+deferred.resolve(id_phone.id);
 });
 });
 return deferred.promise;
