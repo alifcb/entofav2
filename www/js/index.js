@@ -64,7 +64,7 @@ function errorCB(err) {
     alert("Error processing SQL0: "+err.message);
 }
 var db = window.openDatabase("Database", "1.0", "Cordova Namia", 200000);
-db.transaction(queryDB, errorCB);
+db.transaction(queryDB, querySuccess);
 
 function queryDB(tx) {//
     tx.executeSql('SELECT * FROM setting', [], querySuccess, querySuccess);
@@ -73,7 +73,7 @@ function queryDB(tx) {//
 //namayesh etelat zakhire shode (option)
 function querySuccess(tx, results) { 
 var len = results.rows.length;
-alert(len);
+//alert(len);
 if(len==0){
 id_phone.id = Math.floor((Math.random() * 10000000) + 1);  
 tx.executeSql('INSERT INTO setting(title,value) values("id_phone",'+id_phone.id+')');
