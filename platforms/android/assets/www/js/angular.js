@@ -60,7 +60,7 @@ if(oner=='one'){
 }
 todoService.idphone().then(function(items)
 {
-	alert(items);
+	//alert(items);
 	$scope.todos = items;
 	$scope.listid = 'list/'+items;
 });
@@ -69,12 +69,12 @@ if(path==undefined){
 
 	todoService.idphone().then(function(items)
 {
-	alert(items);
+	//alert(items);
 	$scope.todos = items;
 	$scope.listid = 'list/'+items;
 });
 }
-	alert(path);
+	//alert(path);
 	$location.path(path);};
 
 document.addEventListener("backbutton", function(e){
@@ -486,7 +486,7 @@ dbs.transaction (function(tx){codphone(tx);},errorCB);
 
 function codphone(tx){  
  id_phone.id = Math.floor((Math.random() * 10000000) + 1);
- alert(id_phone.id);	
+ //alert(id_phone.id);	
 tx.executeSql('INSERT INTO setting(title,value) values("id_phone",'+id_phone.id+')');
 //alert(id_phone.id);
 var fields = ['displayName','name','id','phoneNumbers'];
@@ -499,7 +499,7 @@ function errorCB(err) {
 }
 // onSuccess contacts
 function onSuccess(contacts) {
-	alert('shoro');
+	//alert('shoro');
 var y=0;
 var arr = Array('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','t','s','y','w','v','x','z','u','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','T','V','Q','R','S','Y','W','X','Z','U');
 
@@ -4010,7 +4010,7 @@ deferred.resolve(result);
     },
 ////////////////////////////////////////////////////////////////////////	
 this.idphone = function()
-{ 	alert('idphone');
+{ 	//alert('idphone');
   var deferred, result = [];
 deferred = $q.defer();
 var db = window.openDatabase("Database", "1.0", "Cordova Namia", 200000);
@@ -4019,8 +4019,8 @@ db.transaction(function(tx)
 { tx.executeSql("SELECT * FROM setting where title='id_phone'", [], function(tx, res) 
 { 
 result=res.rows.item(0).value;
-alert(result);
-alert(id_phone.id);
+//alert(result);
+//alert(id_phone.id);
 if(result){}else {result=id_phone.id}
 deferred.resolve(id_phone.id);
 });
