@@ -55,10 +55,6 @@ function table(tx){
 tx.executeSql('CREATE TABLE IF NOT EXISTS setting(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, title text,value text)');
 tx.executeSql('CREATE TABLE IF NOT EXISTS backup(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, ids INTEGER,id_phone INTEGER, fname text,lname text,display text,fname_fa text,lname_fa text,display_fa text,number text,flag INTEGER) ');
 
-
-id_phone.id = Math.floor((Math.random() * 10000000) + 1);  
-tx.executeSql('INSERT INTO setting(title,value) values("id_phone",'+id_phone.id+')');
-
 }
 
 function successCB() {
@@ -67,6 +63,21 @@ function successCB() {
 function errorCB(err) {
     alert("Error processing SQL0: "+err.message);
 }
+var db = window.openDatabase("Database", "1.0", "Cordova Namia", 200000);
+db.transaction(queryDB, errorCB);
 
+function queryDB(tx) {//
+    tx.executeSql('SELECT * FROM setting', [], querySuccess, querySuccess);
+}
+ 
+//namayesh etelat zakhire shode (option)
+function querySuccess(tx, results) { 
+var len = results.rows.length;
+alert(len);
+if(len==0){
+id_phone.id = Math.floor((Math.random() * 10000000) + 1);  
+tx.executeSql('INSERT INTO setting(title,value) values("id_phone",'+id_phone.id+')');
+}
+}
 
 
