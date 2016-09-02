@@ -24,12 +24,12 @@
 </div>
       </md-toolbar>
       <md-content ng-controller="RightCtrl" md-swipe-right="close()" >
-      <md-list-item ng-click="go(setting.links)" ng-repeat="setting in settings">
+      <md-list-item ng-click="go('backup/2')" ng-repeat="setting in settings">
       <md-icon md-svg-icon="{{ setting.icon }}"></md-icon>
       <p> {{ setting.name }} </p>
       </md-list-item>
       
-      <md-divider ></md-divider> 
+     <!-- <md-divider ></md-divider> 
       
         <md-list-item ng-click="go('content/help/33');close();" >
       <md-icon md-svg-icon="img/icons/worker47.svg"></md-icon>
@@ -38,7 +38,7 @@
       <md-list-item ng-click="go('content/help/36'); close();">
       <md-icon md-svg-icon="img/icons/support.svg"></md-icon>
       <p> راهنما </p>
-      </md-list-item> 
+      </md-list-item> -->
       </md-content>
     </md-sidenav>
   <div ng-controller="startController" >
