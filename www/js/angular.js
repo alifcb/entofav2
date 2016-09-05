@@ -4476,6 +4476,7 @@ function buildToggler(navID) {
 })
 
 .controller('RightCtrl', function ($scope, $timeout, $mdSidenav, $log) {
+$scope.go = function ( path ) {$location.path( path );};
 $scope.close = function () {
 $mdSidenav('right').close()
   .then(function () {
