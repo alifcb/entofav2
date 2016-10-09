@@ -1,7 +1,7 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.namiaweb.entofa" version="1.1.0">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.namiaweb.entofa" version="1.0.5">
   <name>مخاطب فارسی</name>
-  <description>Hello World sample application that responds to the deviceready event.</description>
-  <author href="http://namiaweb.com" email="support@namiaweb.ir">PhoneGap Team</author>
+  <description>برنامه تبدیل مخاطب فنگلیش به فارسی</description>
+  <author href="http://namiaweb.com" email="support@namiaweb.ir">Namia Team</author>
   <content src="index.html"/>
   <preference name="permissions" value="none"/>
   <preference name="orientation" value="portrait"/>
